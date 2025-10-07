@@ -1,0 +1,33 @@
+services:
+  strapi:
+    build: ./strapi
+    ports:
+      - "1337:1337"
+    environment:
+      - DATABASE_CLIENT=postgres
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=strapi
+      - DATABASE_PASSWORD=strapi
+    depends_on:
+      - db
+
+  next:
+    build: ./nextjs
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://strapi:1337
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=strapi
+      - POSTGRES_USER=strapi
+      - POSTGRES_PASSWORD=strapi
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
