@@ -5,11 +5,11 @@ services:
       - "1337:1337"
     environment:
       - DATABASE_CLIENT=postgres
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=strapi
-      - DATABASE_PASSWORD=strapi
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
     depends_on:
       - db
 
@@ -18,14 +18,14 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - API_URL=http://strapi:1337
+      - API_URL=${STRAPI_URL}
 
   db:
     image: postgres:13
     environment:
-      - POSTGRES_DB=strapi
-      - POSTGRES_USER=strapi
-      - POSTGRES_PASSWORD=strapi
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - db-data:/var/lib/postgresql/data
 
