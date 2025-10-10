@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "dev": "concurrently \"cd strapi && npm run develop\" \"npx wait-on http://localhost:1337 && cd nextjs && npm run dev\"",
+        "start": "concurrently \"cd strapi && npm run start\" \"npx wait-on http://localhost:1337 && cd nextjs && npm run start\""
+    },
+    "dependencies": {
+        "concurrently": "^9.2.1",
+        "wait-on": "^9.0.1"
+    }
+}
