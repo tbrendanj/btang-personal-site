@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_comments",
+  "info": {
+    "singularName": "blog-comment",
+    "pluralName": "blog-comments",
+    "displayName": "Blog Comment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "comment": {
+      "type": "text"
+    },
+    "commenter_name": {
+      "type": "string"
+    },
+    "commenter_email": {
+      "type": "string"
+    },
+    "comment_datetime": {
+      "type": "datetime"
+    },
+    "blog_post_title": {
+      "type": "string"
+    }
+  }
+}
