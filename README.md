@@ -48,8 +48,6 @@ Copy the `.env.sample` files in the root and nextjs into `.env` in their respect
 
 > STRAPI_URL=http://strapi:1337
 >
-> # Database credentials for Strapi
->
 > DATABASE_HOST=db
 >
 > DATABASE_PORT=5432
