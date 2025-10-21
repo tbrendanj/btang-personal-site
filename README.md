@@ -60,4 +60,4 @@ Copy the `.env.sample` files in the root and nextjs into `.env` in their respect
 
 The postgres credentials don't really matter right now since I have yet to do anything involving a postgres db. You can write `strapi` into all of them and it will work fine.
 
-`npm run dev` starts the Next and Strapi servers in development mode. Next will be located at localhost:3000. Strapi will be located at localhost:1337.
+`npm run dev` starts the Next and Strapi servers in development mode. Next will be located at localhost:3000; head there to see the site in action. Strapi will be located at localhost:1337.
