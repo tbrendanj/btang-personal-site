@@ -7,6 +7,8 @@ import { BlocksContent, BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { getStrapiImageUrl } from '../utils/getStrapiImageUrl';
 import type { StrapiImage } from '../types/StrapiImage';
 
+import styles from './home.module.css';
+
 export default function HomePage() {
   const [title, setTitle] = useState<string>('');
   const [text, setText] = useState<Array<BlocksContent>>([]);
@@ -29,6 +31,7 @@ export default function HomePage() {
       </div>
       {image && image.url && (
         <Image
+          className={styles.homeImage}
           alt={image.alternativeText ?? 'image'}
           width={image.width}
           height={image.height}
