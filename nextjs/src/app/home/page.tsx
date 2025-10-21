@@ -15,7 +15,7 @@ export default function HomePage() {
     const fetchHomePageData = async () => {
       const { data } = await fetchHome();
       console.log(data);
-      setTitle(data.Title);
+      setTitle(data.title);
       setText(data.text);
       setImage(data.image);
     };
