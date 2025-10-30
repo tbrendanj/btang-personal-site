@@ -1,0 +1,19 @@
+.navItem {
+  border-bottom: 5px solid #cc00cc;
+  transition: all 0.25s ease-out allow-discrete;
+  color: #000000;
+}
+
+.navItem:hover {
+  box-shadow: 5px 5px 5px -5px #000000;
+  border-bottom-color: #009933;
+}
+
+.navItemWrapper {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  display: block;
+  /* vertical-align: middle; */
+  text-align: center;
+}
