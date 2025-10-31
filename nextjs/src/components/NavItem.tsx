@@ -22,11 +22,11 @@ export default function NavItem({
       : false;
   return (
     <a className={styles.navItemWrapper} href={href}>
-      <div
+      <h3
         className={`${styles.navItem} ${isCurrentPath ? styles.current : ''}`}
       >
         {text}
-      </div>
+      </h3>
     </a>
   );
 }

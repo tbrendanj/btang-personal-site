@@ -1,4 +1,5 @@
 .navItem {
+  height: 64px;
   border-bottom: 5px solid #cc00cc;
   transition: all 0.25s ease-out allow-discrete;
   color: #000000;
@@ -14,10 +15,18 @@
   height: 100%;
   width: 100%;
   display: block;
-  /* vertical-align: middle; */
+  padding: auto;
   text-align: center;
 }
 
 .navItem.current {
   border-bottom-color: #009933;
+}
+
+/* TODO: change width when I can look up tablet size, also look up how to add viewport widths to storybook */
+/* TODO: vertically center h3s/text */
+@media (min-width: 720px) {
+  .navItem {
+    height: 32px;
+  }
 }
