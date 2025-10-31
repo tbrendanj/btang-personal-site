@@ -35,12 +35,11 @@ export const Default: Story = {
       },
       {
         href: 'https://github.com',
-        text: 'Lorem Ipsum',
+        text: 'Lorem',
       },
       {
         href: 'https://github.com',
         text: 'ASDF',
-        forceCurrentPath: true,
       },
       {
         href: 'https://github.com',

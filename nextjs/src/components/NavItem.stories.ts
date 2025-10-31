@@ -37,6 +37,5 @@ export const CurrentPath: Story = {
   args: {
     href: 'https://github.com',
     text: 'Button',
-    forceCurrentPath: true,
   },
 };

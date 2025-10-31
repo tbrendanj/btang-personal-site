@@ -2,16 +2,14 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchHome } from '../utils/fetchHome';
-import Image from 'next/image';
-import { BlocksContent, BlocksRenderer } from '@strapi/blocks-react-renderer';
-import { getStrapiImageUrl } from '../utils/getStrapiImageUrl';
+import { BlocksContent } from '@strapi/blocks-react-renderer';
 import type { StrapiImage } from '../types/StrapiImage';
 
-import styles from './home.module.css';
+import CommonPage from '@/components/CommonPage';
 
 export default function HomePage() {
   const [title, setTitle] = useState<string>('');
-  const [text, setText] = useState<Array<BlocksContent>>([]);
+  const [text, setText] = useState<BlocksContent>([]);
   const [image, setImage] = useState<StrapiImage | null>(null);
   useEffect(() => {
     const fetchHomePageData = async () => {
@@ -23,21 +21,5 @@ export default function HomePage() {
     };
     fetchHomePageData();
   }, []);
-  return (
-    <>
-      <div>{title}</div>
-      <div>
-        <BlocksRenderer content={text} />
-      </div>
-      {image && image.url && (
-        <Image
-          className={styles.homeImage}
-          alt={image.alternativeText ?? 'image'}
-          width={image.width}
-          height={image.height}
-          src={`${getStrapiImageUrl(image.url)}`}
-        />
-      )}
-    </>
-  );
+  return <CommonPage title={title} text={text} image={image} />;
 }

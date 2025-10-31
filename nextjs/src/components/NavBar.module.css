@@ -1,8 +1,8 @@
 .navBar {
   display: flex;
   flex-direction: column;
-  /* gap: 5px; */
-  width: 100vw;
+  gap: 5px;
+  width: 100%;
 }
 
 /* TODO: Fix the min width to the actual tablet size */

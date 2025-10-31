@@ -1,0 +1,25 @@
+.commonPage {
+  max-width: 90vw;
+  margin: auto;
+}
+
+.commonPageHeading {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* TODO: how to center images */
+.commonPageImage {
+  max-width: 500px;
+  max-height: 360px;
+  object-fit: contain;
+  margin: auto;
+}
+
+/* TODO: figure out actual XL width */
+@media (min-width: 1280px) {
+  .commonPage {
+    max-width: 1180px; /* TODO: figure out actual XL width, go a little smaller */
+  }
+}
