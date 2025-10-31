@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  max-width: 1280px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
