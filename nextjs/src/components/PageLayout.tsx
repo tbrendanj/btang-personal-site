@@ -1,6 +1,6 @@
-// import Navbar from './navbar'
 // import Footer from './footer'
 import React from 'react';
+import Header from './Header';
 
 export interface LayoutChildren {
   children?: React.ReactNode;
@@ -9,7 +9,7 @@ export interface LayoutChildren {
 export default function PageLayout({ children }: LayoutChildren) {
   return (
     <>
-      <div>Hello</div>
+      <Header />
       <main>{children}</main>
     </>
   );
