@@ -26,9 +26,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Test: Story = {
+export const Normal: Story = {
   args: {
     href: 'https://github.com',
     text: 'Button',
+  },
+};
+
+export const CurrentPath: Story = {
+  args: {
+    href: 'https://github.com',
+    text: 'Button',
+    forceCurrentPath: true,
   },
 };
