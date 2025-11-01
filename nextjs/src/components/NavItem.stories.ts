@@ -32,3 +32,23 @@ export const Default: Story = {
     text: 'Button',
   },
 };
+
+/**
+ * TODO list:
+ * query for single blog post by title
+ * query for single project by title
+ * add project-specific fields as optional to commonpage
+ * query for all blog posts paginated
+ * query for all projects paginated
+ * query for title search results for blog
+ * query for title search results for projects
+ * blog main
+ * project main
+ * blog/[page]
+ * project/[page]
+ * blog/post/[url]
+ * project/post/[url]
+ * blog/search/[term]
+ * project/search/[term]
+ * try international locales in layout
+ */
