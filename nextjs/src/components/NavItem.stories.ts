@@ -32,10 +32,3 @@ export const Default: Story = {
     text: 'Button',
   },
 };
-
-export const CurrentPath: Story = {
-  args: {
-    href: 'https://github.com',
-    text: 'Button',
-  },
-};

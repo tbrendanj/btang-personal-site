@@ -19,10 +19,6 @@
   text-align: center;
 }
 
-.navItem.current {
-  border-bottom-color: #009933;
-}
-
 /* TODO: change width when I can look up tablet size, also look up how to add viewport widths to storybook */
 /* TODO: vertically center h3s/text */
 @media (min-width: 720px) {
