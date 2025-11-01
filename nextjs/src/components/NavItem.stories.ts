@@ -56,6 +56,7 @@ export const Default: Story = {
  * multi image support at bottom of common page
  * contact page set up to basically just show an email
  * top h1 links to home as well
+ * check current best practices for typescript declaring react fcs
  *
  * planned future features (write into project post for this)
  * full contact form
