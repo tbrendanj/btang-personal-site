@@ -1,30 +1,10 @@
 import React from 'react';
 
 import styles from './Footer.module.css';
+import HeaderTabs from '@/app/globals/HeaderTabs';
 
 export default function Footer() {
-  const footerItems = [
-    {
-      href: '/',
-      text: 'Home',
-    },
-    {
-      href: '/about',
-      text: 'About',
-    },
-    {
-      href: '/projects',
-      text: 'Projects',
-    },
-    {
-      href: '/blog',
-      text: 'Blog',
-    },
-    {
-      href: '/contact',
-      text: 'Contact',
-    },
-  ];
+  const footerItems = HeaderTabs;
   return (
     <div className={styles.footer}>
       {footerItems.map((footerItem, index) => {

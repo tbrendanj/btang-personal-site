@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './Header.module.css';
 import NavBar, { NavBarProps } from './NavBar';
+import HeaderTabs from '@/app/globals/HeaderTabs';
 
 export default function Header() {
   /**
@@ -12,28 +13,7 @@ export default function Header() {
    */
   const title = "B. Tang's Internet Corner";
   const navItems: NavBarProps = {
-    navItems: [
-      {
-        href: '/',
-        text: 'Home',
-      },
-      {
-        href: '/about',
-        text: 'About',
-      },
-      {
-        href: '/projects',
-        text: 'Projects',
-      },
-      {
-        href: '/blog',
-        text: 'Blog',
-      },
-      {
-        href: '/contact',
-        text: 'Contact',
-      },
-    ],
+    navItems: HeaderTabs,
   };
   return (
     <div className={styles.header}>
