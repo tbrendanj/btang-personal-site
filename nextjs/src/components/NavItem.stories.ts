@@ -51,4 +51,14 @@ export const Default: Story = {
  * blog/search/[term]
  * project/search/[term]
  * try international locales in layout
+ * main image field
+ * make fields have common names across all types
+ * multi image support at bottom of common page
+ * contact page set up to basically just show an email
+ * top h1 links to home as well
+ *
+ * planned future features (write into project post for this)
+ * full contact form
+ * highlight the header tab for the part of website viewer is on
+ * advanced blog and project searches
  */
