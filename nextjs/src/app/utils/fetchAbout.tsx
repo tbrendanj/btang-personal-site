@@ -7,7 +7,7 @@ export async function fetchAbout() {
     const options = { headers: { Authorization: `Bearer ${token}` } };
     const urlParamsObject = {
       populate: {
-        image: {
+        main_image: {
           populate: '*',
         },
       },

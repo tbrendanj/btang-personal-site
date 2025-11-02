@@ -2,38 +2,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchAbout } from '../utils/fetchAbout';
-import Image from 'next/image';
-import { BlocksContent, BlocksRenderer } from '@strapi/blocks-react-renderer';
-import { getStrapiImageUrl } from '../utils/getStrapiImageUrl';
+import { BlocksContent } from '@strapi/blocks-react-renderer';
 import type { StrapiImage } from '../types/StrapiImage';
+import CommonPage from '@/components/CommonPage';
 
 export default function AboutPage() {
   const [title, setTitle] = useState<string>('');
   const [text, setText] = useState<BlocksContent>([]);
-  const [image, setImage] = useState<StrapiImage | null>(null);
+  const [mainImage, setMainImage] = useState<StrapiImage | null>(null);
   useEffect(() => {
     const fetchAboutPageData = async () => {
       const { data } = await fetchAbout();
       setTitle(data.title);
       setText(data.text);
-      setImage(data.image);
+      setMainImage(data.main_image);
     };
     fetchAboutPageData();
   }, []);
   return (
-    <>
-      <div>{title}</div>
-      <div>
-        <BlocksRenderer content={text} />
-      </div>
-      {image && image.url && (
-        <Image
-          alt={image.alternativeText ?? 'image'}
-          width={image.width}
-          height={image.height}
-          src={`${getStrapiImageUrl(image.url)}`}
-        />
-      )}
-    </>
+    <CommonPage title={title} text={text} mainImage={mainImage} images={[]} />
   );
 }

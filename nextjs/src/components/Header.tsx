@@ -17,7 +17,7 @@ export default function Header() {
   };
   return (
     <div className={styles.header}>
-      <a href="/">
+      <a className={styles.headerTitle} href="/">
         <h1>{title}</h1>
       </a>
       <NavBar {...navItems} />

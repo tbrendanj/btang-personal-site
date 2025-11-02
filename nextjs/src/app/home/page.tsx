@@ -10,16 +10,18 @@ import CommonPage from '@/components/CommonPage';
 export default function HomePage() {
   const [title, setTitle] = useState<string>('');
   const [text, setText] = useState<BlocksContent>([]);
-  const [image, setImage] = useState<StrapiImage | null>(null);
+  const [mainImage, setMainImage] = useState<StrapiImage | null>(null);
   useEffect(() => {
     const fetchHomePageData = async () => {
       const { data } = await fetchHome();
       console.log(data);
       setTitle(data.title);
       setText(data.text);
-      setImage(data.image);
+      setMainImage(data.main_image);
     };
     fetchHomePageData();
   }, []);
-  return <CommonPage title={title} text={text} image={image} />;
+  return (
+    <CommonPage title={title} text={text} mainImage={mainImage} images={[]} />
+  );
 }
