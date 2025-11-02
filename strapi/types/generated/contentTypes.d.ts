@@ -542,7 +542,6 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -562,6 +561,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     release_date: Schema.Attribute.DateTime;
     short_description: Schema.Attribute.String;
+    text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -630,6 +630,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     main_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    project_status: Schema.Attribute.Enumeration<['active', 'inactive']>;
     publishedAt: Schema.Attribute.DateTime;
     release_date: Schema.Attribute.DateTime;
     short_description: Schema.Attribute.String;

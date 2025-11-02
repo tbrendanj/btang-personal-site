@@ -12,9 +12,11 @@ Blog posts are defined with the following fields:
 >
 > Short description: The description that gets displayed on the list of blog posts.
 >
-> Content: The post content.
+> Text: The post content.
 >
-> Media content: Any images the user might want to attach to the post.
+> Main Image: The main image for the blog post.
+>
+> Images: Any images the user might want to attach to the post.
 >
 > Release date: The datetime after which the post should begin appearing, allowing the owner to control when posts go live.
 >
@@ -28,9 +30,15 @@ Projects are defined with the following fields:
 >
 > Text: Text content for the project page.
 >
+> Main Image: The main image for the project post.
+>
 > Images: Any images the user might want to attach to the post.
 >
+> Release date: The datetime after which the post should begin appearing, allowing the owner to control when posts go live.
+>
 > Link: A link relevant to the project; the owner might use this to attach a link to Github or somewhere a live demo is hosted.
+>
+> Status: Whether the project is in active development or not. Limited to "active" or "inactive".
 >
 > Url slug: The url the project should appear at. In the list of project, this is what each project element should link to.
 

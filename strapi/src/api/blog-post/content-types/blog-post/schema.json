@@ -17,7 +17,7 @@
     "short_description": {
       "type": "string"
     },
-    "content": {
+    "text": {
       "type": "blocks"
     },
     "release_date": {
