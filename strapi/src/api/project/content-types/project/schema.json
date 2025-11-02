@@ -48,6 +48,13 @@
     },
     "release_date": {
       "type": "datetime"
+    },
+    "project_status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "inactive"
+      ]
     }
   }
 }

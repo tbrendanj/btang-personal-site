@@ -6,23 +6,28 @@ import { StrapiImage } from '@/app/types/StrapiImage';
 import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
 
 import styles from './CommonPage.module.css';
+import { StatusValues } from '@/app/types/StatusValues';
+import Status from './Status';
 
 export interface CommonPageProps {
   title: string;
   text: BlocksContent;
   mainImage: StrapiImage | null;
   images: Array<StrapiImage | null>;
+  status: StatusValues | undefined;
 }
 
 export default function CommonPage({
   title,
   text,
-  mainImage,
-  images,
+  mainImage = null,
+  images = [],
+  status = undefined,
 }: CommonPageProps) {
   return (
     <div className={styles.commonPage}>
       <h2 className={styles.commonPageHeading}>{title}</h2>
+      {status && <Status status={status} />}
       {mainImage && mainImage.url && (
         <Image
           className={styles.commonPageImage}
