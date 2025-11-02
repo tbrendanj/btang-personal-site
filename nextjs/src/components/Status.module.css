@@ -1,0 +1,18 @@
+.status {
+  height: 20px;
+  width: 75px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.status.inactive {
+  border: 2px solid #ff0000;
+  color: #ff0000;
+}
+
+.status.active {
+  border: 2px solid #66ff33;
+  color: #66ff33;
+}
