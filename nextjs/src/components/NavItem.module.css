@@ -1,28 +1,36 @@
 .navItem {
-  height: 64px;
-  border-bottom: 5px solid #cc00cc;
-  transition: all 0.25s ease-out allow-discrete;
   color: #000000;
-}
-
-.navItem:hover {
-  box-shadow: 5px -5px 5px -2px #000000;
-  border-bottom-color: #009933;
+  margin-left: 5vw;
 }
 
 .navItemWrapper {
+  height: 64px;
   text-decoration: none;
-  height: 100%;
-  width: 100%;
-  display: block;
-  padding: auto;
-  text-align: center;
+  border-bottom: 5px solid #cc00cc;
+  transition: all 0.25s ease-out allow-discrete;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
-/* TODO: change width when I can look up tablet size, also look up how to add viewport widths to storybook */
+.navItemWrapper:hover {
+  box-shadow: -5px -5px 5px -2px #000000;
+  border-bottom-color: #009933;
+}
+
 /* TODO: vertically center h3s/text */
-@media (min-width: 720px) {
-  .navItem {
+@media (min-width: 768px) {
+  .navItemWrapper {
     height: 32px;
+    justify-content: center;
+  }
+
+  .navItemWrapper:hover {
+    box-shadow: 5px -5px 5px -2px #000000;
+  }
+
+  .navItem {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
