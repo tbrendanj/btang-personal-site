@@ -23,7 +23,7 @@
     "release_date": {
       "type": "datetime"
     },
-    "media_content": {
+    "images": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
@@ -35,6 +35,16 @@
     },
     "url_slug": {
       "type": "string"
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
