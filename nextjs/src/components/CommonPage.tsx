@@ -15,6 +15,7 @@ export interface CommonPageProps {
   mainImage: StrapiImage | null;
   images: Array<StrapiImage | null>;
   status?: StatusValues;
+  link?: string;
 }
 
 export default function CommonPage({
@@ -23,6 +24,7 @@ export default function CommonPage({
   mainImage = null,
   images = [],
   status = undefined,
+  link = undefined,
 }: CommonPageProps) {
   return (
     <div className={styles.commonPage}>
@@ -40,6 +42,11 @@ export default function CommonPage({
       <div>
         <BlocksRenderer content={text} />
       </div>
+      {link && (
+        <div>
+          See more of this project <a href={link}>here</a>!
+        </div>
+      )}
       {images.length > 0 &&
         images.map((image, index) => {
           if (!(image && image.url)) {
