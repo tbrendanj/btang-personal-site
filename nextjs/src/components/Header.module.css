@@ -6,14 +6,6 @@
   gap: 5px;
 }
 
-@media (min-width: 768px) {
-  .header {
-    /* TODO: remove placeholder later */
-    display: flex;
-    /* align items to center */
-  }
-}
-
 @media (min-width: 1280px) {
   .header {
     max-width: 1280px;

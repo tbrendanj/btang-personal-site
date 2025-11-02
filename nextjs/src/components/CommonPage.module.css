@@ -1,6 +1,9 @@
 .commonPage {
+  display: flex;
+  flex-direction: column;
   max-width: 90vw;
   margin: auto;
+  justify-content: center;
 }
 
 .commonPageHeading {
