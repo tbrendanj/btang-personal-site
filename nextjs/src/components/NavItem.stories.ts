@@ -42,6 +42,8 @@ export const Default: Story = {
  * query for all projects paginated
  * query for title search results for blog
  * query for title search results for projects
+ * component - commonqueryitem (optional field for project status)
+ * commonpage needs optional params status and url for projects
  * blog main
  * project main
  * blog/[page]
@@ -55,7 +57,6 @@ export const Default: Story = {
  * make fields have common names across all types
  * multi image support at bottom of common page
  * contact page set up to basically just show an email
- * top h1 links to home as well
  * check current best practices for typescript declaring react fcs
  *
  * planned future features (write into project post for this)
