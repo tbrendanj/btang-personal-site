@@ -28,7 +28,7 @@ export default function ProjectsPage() {
             <CommonPostPreview
               key={'project_' + index}
               title={project.title}
-              urlSlug={project.url_slug}
+              urlSlug={`projects/project/${project.url_slug}`}
               shortDescription={project.short_description}
               mainImage={project.main_image}
             />
