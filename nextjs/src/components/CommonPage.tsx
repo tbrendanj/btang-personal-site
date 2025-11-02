@@ -14,7 +14,7 @@ export interface CommonPageProps {
   text: BlocksContent;
   mainImage: StrapiImage | null;
   images: Array<StrapiImage | null>;
-  status: StatusValues | undefined;
+  status?: StatusValues;
 }
 
 export default function CommonPage({
