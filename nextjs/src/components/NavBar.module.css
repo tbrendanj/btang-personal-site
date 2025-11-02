@@ -13,5 +13,6 @@
     flex-direction: row;
     gap: 0;
     margin-right: auto;
+    height: auto;
   }
 }
