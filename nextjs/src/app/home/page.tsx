@@ -14,7 +14,6 @@ export default function HomePage() {
   useEffect(() => {
     const fetchHomePageData = async () => {
       const { data } = await fetchHome();
-      console.log(data);
       setTitle(data.title);
       setText(data.text);
       setMainImage(data.main_image);
