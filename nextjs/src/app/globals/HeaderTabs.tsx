@@ -17,10 +17,10 @@ const HeaderTabs: Array<NavItemProps> = [
     href: '/blog',
     text: 'Blog',
   },
-  {
-    href: '/contact',
-    text: 'Contact',
-  },
+  // {
+  //   href: '/contact',
+  //   text: 'Contact',
+  // },
 ];
 
 export default HeaderTabs;

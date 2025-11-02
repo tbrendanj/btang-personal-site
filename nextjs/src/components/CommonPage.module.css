@@ -4,12 +4,12 @@
   max-width: 90vw;
   margin: auto;
   justify-content: center;
+  gap: 20px;
 }
 
 .commonPageHeading {
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .commonPageImage {
