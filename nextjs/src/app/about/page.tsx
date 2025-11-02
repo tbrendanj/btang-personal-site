@@ -9,7 +9,7 @@ import type { StrapiImage } from '../types/StrapiImage';
 
 export default function AboutPage() {
   const [title, setTitle] = useState<string>('');
-  const [text, setText] = useState<Array<BlocksContent>>([]);
+  const [text, setText] = useState<BlocksContent>([]);
   const [image, setImage] = useState<StrapiImage | null>(null);
   useEffect(() => {
     const fetchAboutPageData = async () => {
