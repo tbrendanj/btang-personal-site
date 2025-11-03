@@ -5,7 +5,7 @@ export interface Post {
   title: string;
   url_slug: string;
   short_description: string;
-  main_image: StrapiImage;
+  main_image: StrapiImage | null;
   // just projects
   project_status?: StatusValues;
 }

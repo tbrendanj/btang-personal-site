@@ -21,7 +21,7 @@ export default function CommonPostPreviewList({
             <CommonPostPreview
               key={'post_' + index}
               title={post.title}
-              urlSlug={`${directory}${post.url_slug}`}
+              urlSlug={`${directory}/${post.url_slug}`}
               shortDescription={post.short_description}
               mainImage={post.main_image}
               status={

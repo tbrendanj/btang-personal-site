@@ -2,11 +2,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchProjects } from '../utils/fetchProjects';
-import CommonPostPreviewList from '@/components/CommonPostPreviewList';
-import { Project } from '../types/Project';
+import { Post } from '../types/Post';
+import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Array<Project>>([]);
+  const [projects, setProjects] = useState<Array<Post>>([]);
   useEffect(() => {
     const fetchProjectsData = async () => {
       const { data } = await fetchProjects(null, [
@@ -20,9 +20,10 @@ export default function ProjectsPage() {
     fetchProjectsData();
   }, []);
   return (
-    <div>
-      <h3>Projects</h3>
-      <CommonPostPreviewList posts={projects} directory="projects/project/" />
-    </div>
+    <CommonPostPreviewPage
+      title="Projects"
+      directory="projects/project"
+      posts={projects}
+    />
   );
 }
