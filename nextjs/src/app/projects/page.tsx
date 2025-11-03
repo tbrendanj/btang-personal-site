@@ -2,7 +2,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchProjects } from '../utils/fetchProjects';
-import CommonPostPreview from '@/components/CommonPostPreview';
+import CommonPostPreviewList from '@/components/CommonPostPreviewList';
 import { Project } from '../types/Project';
 
 export default function ProjectsPage() {
@@ -22,18 +22,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <h3>Projects</h3>
-      {projects.length > 0 &&
-        projects.map((project, index) => {
-          return (
-            <CommonPostPreview
-              key={'project_' + index}
-              title={project.title}
-              urlSlug={`projects/project/${project.url_slug}`}
-              shortDescription={project.short_description}
-              mainImage={project.main_image}
-            />
-          );
-        })}
+      <CommonPostPreviewList posts={projects} directory="projects/project/" />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { StrapiImage } from '@/app/types/StrapiImage';
 import Image from 'next/image';
 import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
 
-interface CommonPostPreviewProps {
+export interface CommonPostPreviewProps {
   title: string;
   urlSlug: string;
   shortDescription: string;
