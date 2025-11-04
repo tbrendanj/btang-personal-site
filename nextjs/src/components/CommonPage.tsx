@@ -29,8 +29,10 @@ export default function CommonPage({
 }: CommonPageProps) {
   return (
     <div className={styles.commonPage}>
-      <h2 className={styles.commonPageHeading}>{title}</h2>
-      {status && <Status status={status} />}
+      <div className={styles.commonPageHeading}>
+        <h2>{title}</h2>
+        {status && <Status status={status} />}
+      </div>
       {mainImage && mainImage.url && (
         <Image
           className={styles.commonPageImage}
@@ -44,7 +46,7 @@ export default function CommonPage({
         <BlocksRenderer content={text} />
       </div>
       {link && (
-        <div>
+        <div className={styles.linkDiv}>
           See more of this project <Link href={link}>here</Link>!
         </div>
       )}
