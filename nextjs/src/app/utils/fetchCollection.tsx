@@ -23,10 +23,9 @@ export async function fetchCollection(
       },
     };
 
-    const currentDate = new Date();
     const filters: { [key: string]: object | Array<object> } = {
       release_date: {
-        $lte: currentDate.toISOString(),
+        $lte: new Date().toISOString(),
       },
     };
     if (searchTerm) {

@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './Footer.module.css';
 import HeaderTabs from '@/app/globals/HeaderTabs';
+import Link from 'next/link';
 
 export default function Footer() {
   const footerItems = HeaderTabs;
@@ -9,9 +10,9 @@ export default function Footer() {
     <div className={styles.footer}>
       {footerItems.map((footerItem, index) => {
         return (
-          <a key={'footerItem_' + index} href={footerItem.href}>
+          <Link key={'footerItem_' + index} href={footerItem.href}>
             {footerItem.text}
-          </a>
+          </Link>
         );
       })}
     </div>

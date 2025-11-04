@@ -2,7 +2,7 @@ import { fetchCollectionElementByUrlSlug } from './fetchCollectionElementByUrlSl
 
 export async function fetchProjectByUrlSlug(searchTerm: string | null = null) {
   try {
-    const path = '/project';
+    const path = '/projects';
     return fetchCollectionElementByUrlSlug(path, searchTerm);
   } catch (e) {
     console.error(e);

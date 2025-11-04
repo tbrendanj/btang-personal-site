@@ -9,7 +9,6 @@
 
 .commonPageHeading {
   text-align: center;
-  padding-top: 20px;
 }
 
 .commonPageImage {
@@ -17,6 +16,13 @@
   max-height: 360px;
   object-fit: contain;
   margin: auto;
+}
+
+.commonPageImages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 @media (min-width: 1280px) {

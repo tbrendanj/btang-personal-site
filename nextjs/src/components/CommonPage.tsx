@@ -8,6 +8,7 @@ import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
 import styles from './CommonPage.module.css';
 import { StatusValues } from '@/app/types/StatusValues';
 import Status from './Status';
+import Link from 'next/link';
 
 export interface CommonPageProps {
   title: string;
@@ -44,25 +45,27 @@ export default function CommonPage({
       </div>
       {link && (
         <div>
-          See more of this project <a href={link}>here</a>!
+          See more of this project <Link href={link}>here</Link>!
         </div>
       )}
-      {images.length > 0 &&
-        images.map((image, index) => {
-          if (!(image && image.url)) {
-            return '';
-          }
-          return (
-            <Image
-              key={'images_' + index}
-              className={styles.commonPageImage}
-              alt={image.alternativeText ?? 'image'}
-              width={image.width}
-              height={image.height}
-              src={`${getStrapiImageUrl(image.url)}`}
-            />
-          );
-        })}
+      <div className={styles.commonPageImages}>
+        {images.length > 0 &&
+          images.map((image, index) => {
+            if (!(image && image.url)) {
+              return '';
+            }
+            return (
+              <Image
+                key={'images_' + index}
+                className={styles.commonPageImage}
+                alt={image.alternativeText ?? 'image'}
+                width={image.width}
+                height={image.height}
+                src={`${getStrapiImageUrl(image.url)}`}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }

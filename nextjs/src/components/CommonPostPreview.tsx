@@ -6,6 +6,7 @@ import Status from './Status';
 import { StrapiImage } from '@/app/types/StrapiImage';
 import Image from 'next/image';
 import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
+import Link from 'next/link';
 
 export interface CommonPostPreviewProps {
   title: string;
@@ -23,7 +24,7 @@ export default function CommonPostPreview({
   status = undefined,
 }: CommonPostPreviewProps) {
   return (
-    <a href={'/' + urlSlug}>
+    <Link href={'/' + urlSlug}>
       <div className={styles.commonPostPreview}>
         <div className={styles.commonPostPreviewHeading}>
           <h3>{title}</h3>
@@ -40,6 +41,6 @@ export default function CommonPostPreview({
           />
         )}
       </div>
-    </a>
+    </Link>
   );
 }

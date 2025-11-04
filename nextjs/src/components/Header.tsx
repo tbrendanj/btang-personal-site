@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import NavBar, { NavBarProps } from './NavBar';
 import HeaderTabs from '@/app/globals/HeaderTabs';
+import Link from 'next/link';
 
 export default function Header() {
   /**
@@ -17,9 +18,9 @@ export default function Header() {
   };
   return (
     <div className={styles.header}>
-      <a className={styles.headerTitle} href="/">
+      <Link className={styles.headerTitle} href="/">
         <h1>{title}</h1>
-      </a>
+      </Link>
       <NavBar {...navItems} />
     </div>
   );
