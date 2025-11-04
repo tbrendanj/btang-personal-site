@@ -1,8 +1,7 @@
 .commonPostPreviewPage {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
 }
 
 .commonPostPreviewPage h2 {
