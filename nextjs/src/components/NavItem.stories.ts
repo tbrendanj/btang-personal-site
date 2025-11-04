@@ -35,21 +35,12 @@ export const Default: Story = {
 
 /**
  * TODO list:
- * add project-specific fields as optional to commonpage
  * query for title search results for blog
  * query for title search results for projects
- * component - commonqueryitem (optional field for project status)
- * commonpage needs optional params status and url for projects
  * blog main
- * project main
- * blog/[page]
- * project/[page]
  * blog/post/[url]
- * project/post/[url]
  * blog/search/[term]
  * project/search/[term]
- * make fields have common names across all types
- * check current best practices for typescript declaring react fcs
  *
  * planned future features (write into project post for this)
  * contact page with full contact form
