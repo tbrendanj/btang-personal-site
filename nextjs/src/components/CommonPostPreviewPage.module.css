@@ -7,3 +7,9 @@
 .commonPostPreviewPage h2 {
   text-align: center;
 }
+
+.commonPostPreviewSearch {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}

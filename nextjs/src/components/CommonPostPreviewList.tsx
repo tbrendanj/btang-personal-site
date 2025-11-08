@@ -30,6 +30,7 @@ export default function CommonPostPreviewList({
             />
           );
         })}
+      {posts.length === 0 && <div>No posts found.</div>}
     </div>
   );
 }

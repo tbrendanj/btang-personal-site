@@ -35,12 +35,9 @@ export const Default: Story = {
 
 /**
  * TODO list:
- * query for title search results for blog
- * query for title search results for projects
  * blog main
  * blog/post/[url]
  * blog/search/[term]
- * project/search/[term]
  *
  * planned future features (write into project post for this)
  * contact page with full contact form
