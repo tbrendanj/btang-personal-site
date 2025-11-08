@@ -6,10 +6,11 @@ import { fetchAPI } from './fetchApi';
  * release_date
  * title
  * main_image
+ * images
  */
 export async function fetchCollection(
   path: string,
-  searchTerm: string | null = null,
+  searchValues: { [key: string]: object | Array<string> },
   fields: Array<string> = []
 ) {
   try {
@@ -20,20 +21,17 @@ export async function fetchCollection(
         main_image: {
           populate: '*',
         },
+        images: {
+          populate: '*',
+        },
+      },
+      filters: {
+        ...searchValues,
+        release_date: {
+          $lte: new Date().toISOString(),
+        },
       },
     };
-
-    const filters: { [key: string]: object | Array<object> } = {
-      release_date: {
-        $lte: new Date().toISOString(),
-      },
-    };
-    if (searchTerm) {
-      filters.title = {
-        $containsi: searchTerm,
-      };
-    }
-    urlParamsObject.filters = filters;
 
     if (fields.length > 0) {
       urlParamsObject.fields = fields;

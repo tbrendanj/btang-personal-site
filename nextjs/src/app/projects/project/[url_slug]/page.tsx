@@ -2,7 +2,7 @@
 import React, { useEffect, useState, use } from 'react';
 import { BlocksContent } from '@strapi/blocks-react-renderer';
 import { StrapiImage } from '@/app/types/StrapiImage';
-import { fetchProjectByUrlSlug } from '@/app/utils/fetchProjectByUrlSlug';
+import { fetchProjects } from '@/app/utils/fetchProjects';
 import CommonPage from '@/components/CommonPage';
 import { StatusValues } from '@/app/types/StatusValues';
 import { useRouter } from 'next/navigation';
@@ -24,7 +24,7 @@ export default function ProjectPage({
   const router = useRouter();
   useEffect(() => {
     const fetchProjectPageData = async (url_slug: string) => {
-      const { data } = await fetchProjectByUrlSlug(url_slug);
+      const { data } = await fetchProjects(null, url_slug);
       if (!data.length) {
         router.push('/projects');
         return;
