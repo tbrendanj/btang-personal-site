@@ -1,8 +1,14 @@
 import { fetchAPI } from './fetchApi';
 
-export async function fetchCollectionElementByUrlSlug(
+/**
+ * @param path which Strapi endpoint to query
+ * @param searchValues Object defining search paramters
+ * @param fields Array of fields to query for
+ * @returns
+ */
+export async function fetchCollectionElementsBySearchValue(
   path: string,
-  searchTerm: string | null = null,
+  searchValues: { [key: string]: object | Array<string> },
   fields: Array<string> = []
 ) {
   try {
@@ -17,18 +23,13 @@ export async function fetchCollectionElementByUrlSlug(
           populate: '*',
         },
       },
-      filters: {},
-    };
-    if (searchTerm) {
-      urlParamsObject.filters = {
-        url_slug: {
-          $eqi: searchTerm,
-        },
+      filters: {
+        ...searchValues,
         release_date: {
           $lte: new Date().toISOString(),
         },
-      };
-    }
+      },
+    };
 
     if (fields.length > 0) {
       urlParamsObject.fields = fields;
