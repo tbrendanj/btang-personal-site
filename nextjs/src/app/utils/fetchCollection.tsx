@@ -11,6 +11,7 @@ import { fetchAPI } from './fetchApi';
 export async function fetchCollection(
   path: string,
   searchValues: { [key: string]: object | Array<string> },
+  page: number = 1,
   fields: Array<string> = []
 ) {
   try {
@@ -30,6 +31,11 @@ export async function fetchCollection(
         release_date: {
           $lte: new Date().toISOString(),
         },
+      },
+      sort: ['release_date:desc'],
+      pagination: {
+        page,
+        pageSize: 10,
       },
     };
 

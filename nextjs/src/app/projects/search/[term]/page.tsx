@@ -26,6 +26,7 @@ export default function ProjectSearchPage({
             $containsi: term,
           },
         },
+        1,
         ['title', 'url_slug', 'short_description', 'project_status']
       );
       setProjects(data);
