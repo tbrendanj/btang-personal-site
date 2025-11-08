@@ -13,6 +13,13 @@ export default function CommonPostPreviewList({
   posts,
   directory,
 }: CommonPostPreviewListProps) {
+  if (posts === null) {
+    return (
+      <div className={styles.commonPostPreviewList}>
+        <div>No posts found.</div>
+      </div>
+    );
+  }
   return (
     <div className={styles.commonPostPreviewList}>
       {posts.length > 0 &&
