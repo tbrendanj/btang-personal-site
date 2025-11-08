@@ -35,13 +35,5 @@ export const Default: Story = {
 
 /**
  * TODO list:
- * blog main
- * blog/post/[url]
- * blog/search/[term]
- *
- * planned future features (write into project post for this)
- * contact page with full contact form
- * highlight the header tab for the part of website viewer is on
- * advanced blog and project searches
- * international locales
+ * SSG individual blog and project post pages
  */
