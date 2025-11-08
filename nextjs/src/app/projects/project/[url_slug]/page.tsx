@@ -24,7 +24,11 @@ export default function ProjectPage({
   const router = useRouter();
   useEffect(() => {
     const fetchProjectPageData = async (url_slug: string) => {
-      const { data } = await fetchProjects(null, url_slug);
+      const { data } = await fetchProjects({
+        url_slug: {
+          $eqi: url_slug,
+        },
+      });
       if (!data.length) {
         router.push('/projects');
         return;

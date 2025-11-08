@@ -15,7 +15,7 @@ export default function CommonPostPreviewList({
 }: CommonPostPreviewListProps) {
   return (
     <div className={styles.commonPostPreviewList}>
-      {posts.length &&
+      {posts.length > 0 &&
         posts.map((post, index) => {
           return (
             <CommonPostPreview

@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const [projects, setProjects] = useState<Array<Post>>([]);
   useEffect(() => {
     const fetchProjectsData = async () => {
-      const { data } = await fetchProjects(null, null, [
+      const { data } = await fetchProjects({}, [
         'title',
         'url_slug',
         'short_description',
