@@ -30,3 +30,22 @@ export default async function ProjectPage({
     />
   );
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    url_slug: string;
+  };
+}) {
+  const { url_slug } = await params;
+  const projectPost = await await fetchProjects({
+    url_slug: {
+      $eqi: url_slug,
+    },
+  });
+  return {
+    title: projectPost.title,
+    description: projectPost.short_description,
+  };
+}

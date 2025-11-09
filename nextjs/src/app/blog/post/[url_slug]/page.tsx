@@ -28,3 +28,22 @@ export default async function BlogPostPage({
     />
   );
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    url_slug: string;
+  };
+}) {
+  const { url_slug } = await params;
+  const blogPost = await await fetchBlogPosts({
+    url_slug: {
+      $eqi: url_slug,
+    },
+  });
+  return {
+    title: blogPost.title,
+    description: blogPost.short_description,
+  };
+}
