@@ -1,48 +1,30 @@
-'use client';
-import React, { useEffect, useState, use } from 'react';
-import { BlocksContent } from '@strapi/blocks-react-renderer';
-import { StrapiImage } from '@/app/types/StrapiImage';
+import React from 'react';
 import CommonPage from '@/components/CommonPage';
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { fetchBlogPosts } from '@/app/utils/fetchBlogPosts';
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{
+  params: {
     url_slug: string;
-  }>;
+  };
 }) {
-  const [title, setTitle] = useState<string>('');
-  const [text, setText] = useState<BlocksContent>([]);
-  const [mainImage, setMainImage] = useState<StrapiImage | null>(null);
-  const [images, setImages] = useState<Array<StrapiImage | null>>([]);
-  const { url_slug } = use(params);
-  const router = useRouter();
-  useEffect(() => {
-    const fetchProjectPageData = async (url_slug: string) => {
-      const { data } = await fetchBlogPosts({
-        url_slug: {
-          $eqi: url_slug,
-        },
-      });
-      if (!data.length) {
-        router.push('/blog');
-        return;
-      }
-      setTitle(data[0].title);
-      setText(data[0].text);
-      setMainImage(data[0].main_image);
-      setImages(data[0].images);
-    };
-    fetchProjectPageData(url_slug);
-  }, [url_slug]);
+  const { url_slug } = await params;
+  const { data } = await fetchBlogPosts({
+    url_slug: {
+      $eqi: url_slug,
+    },
+  });
+  if (!data.length) {
+    redirect('/blog');
+  }
   return (
     <CommonPage
-      title={title}
-      text={text}
-      mainImage={mainImage}
-      images={images}
+      title={data[0].title}
+      text={data[0].text}
+      mainImage={data[0].mainImage}
+      images={data[0].images}
     />
   );
 }
