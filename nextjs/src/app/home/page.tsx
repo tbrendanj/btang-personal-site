@@ -24,3 +24,10 @@ export default function HomePage() {
     <CommonPage title={title} text={text} mainImage={mainImage} images={[]} />
   );
 }
+
+export async function generateMetadata() {
+  return {
+    title: "B. Tang's Internet Corner",
+    description: "B. Tang's blog and personal projects",
+  };
+}

@@ -23,3 +23,10 @@ export default function AboutPage() {
     <CommonPage title={title} text={text} mainImage={mainImage} images={[]} />
   );
 }
+
+export async function generateMetadata() {
+  return {
+    title: 'About',
+    description: "About B. Tang's Internet Corner",
+  };
+}

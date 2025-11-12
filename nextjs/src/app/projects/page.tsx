@@ -17,6 +17,7 @@ export default async function ProjectsPage() {
     />
   );
 }
+
 export async function generateMetadata() {
   return {
     title: 'Projects',
