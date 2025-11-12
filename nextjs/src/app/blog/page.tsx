@@ -1,6 +1,7 @@
 import React from 'react';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { fetchBlogPosts } from '../utils/fetchBlogPosts';
+import { Metadata } from 'next';
 
 export default async function BlogPage() {
   const { data } = await fetchBlogPosts({}, 1, [
@@ -13,9 +14,7 @@ export default async function BlogPage() {
   );
 }
 
-export async function generateMetadata() {
-  return {
-    title: 'Blog',
-    description: "B. Tang's personal blog",
-  };
-}
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: "B. Tang's personal blog",
+};

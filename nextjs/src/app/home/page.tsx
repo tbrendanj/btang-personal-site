@@ -6,6 +6,7 @@ import { BlocksContent } from '@strapi/blocks-react-renderer';
 import type { StrapiImage } from '../types/StrapiImage';
 
 import CommonPage from '@/components/CommonPage';
+import { Metadata } from 'next';
 
 export default function HomePage() {
   const [title, setTitle] = useState<string>('');
@@ -25,9 +26,7 @@ export default function HomePage() {
   );
 }
 
-export async function generateMetadata() {
-  return {
-    title: "B. Tang's Internet Corner",
-    description: "B. Tang's blog and personal projects",
-  };
-}
+export const metadata: Metadata = {
+  title: "B. Tang's Internet Corner",
+  description: "B. Tang's blog and personal projects",
+};

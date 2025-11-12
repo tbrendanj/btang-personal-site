@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchProjects } from '../utils/fetchProjects';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
+import { Metadata } from 'next';
 
 export default async function ProjectsPage() {
   const { data } = await fetchProjects({}, 1, [
@@ -18,9 +19,7 @@ export default async function ProjectsPage() {
   );
 }
 
-export async function generateMetadata() {
-  return {
-    title: 'Projects',
-    description: "B. Tang's personal projects",
-  };
-}
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: "B. Tang's personal projects",
+};
