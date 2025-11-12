@@ -1,43 +1,35 @@
-'use client';
-import React, { use } from 'react';
-import { useState, useEffect } from 'react';
-import { Post } from '@/app/types/Post';
+import React from 'react';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { fetchBlogPosts } from '@/app/utils/fetchBlogPosts';
+import { Metadata } from 'next';
 
 /**
  * As of now for the project MVP, searches only search by title.
  * Advanced search coming eventually. Maybe.
  */
-export default function BlogSearchPage({
+export default async function BlogSearchPage({
   params,
 }: {
-  params: Promise<{
+  params: {
     term: string;
-  }>;
+  };
 }) {
-  const [blogPosts, setBlogPosts] = useState<Array<Post>>([]);
-  const { term } = use(params);
-  useEffect(() => {
-    const fetchBlogData = async () => {
-      const { data } = await fetchBlogPosts(
-        {
-          title: {
-            $containsi: term,
-          },
-        },
-        1,
-        ['title', 'url_slug', 'short_description']
-      );
-      setBlogPosts(data);
-    };
-    fetchBlogData();
-  }, [term]);
+  const { term } = await params;
+  const { data } = await fetchBlogPosts(
+    {
+      title: {
+        $containsi: term,
+      },
+    },
+    1,
+    ['title', 'url_slug', 'short_description']
+  );
   return (
-    <CommonPostPreviewPage
-      title="Blog"
-      directory="blog/post"
-      posts={blogPosts}
-    />
+    <CommonPostPreviewPage title="Blog" directory="blog/post" posts={data} />
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Search Results',
+  description: "Search results in B. Tang's personal blog",
+};

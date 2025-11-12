@@ -1,43 +1,38 @@
-'use client';
-import React, { use } from 'react';
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { fetchProjects } from '@/app/utils/fetchProjects';
-import { Post } from '@/app/types/Post';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
+import { Metadata } from 'next';
 
 /**
  * As of now for the project MVP, searches only search by title.
  * Advanced search coming eventually. Maybe.
  */
-export default function ProjectSearchPage({
+export default async function ProjectSearchPage({
   params,
 }: {
-  params: Promise<{
+  params: {
     term: string;
-  }>;
+  };
 }) {
-  const [projects, setProjects] = useState<Array<Post>>([]);
-  const { term } = use(params);
-  useEffect(() => {
-    const fetchProjectsData = async () => {
-      const { data } = await fetchProjects(
-        {
-          title: {
-            $containsi: term,
-          },
-        },
-        1,
-        ['title', 'url_slug', 'short_description', 'project_status']
-      );
-      setProjects(data);
-    };
-    fetchProjectsData();
-  }, [term]);
+  const { term } = await params;
+  const { data } = await fetchProjects(
+    {
+      title: {
+        $containsi: term,
+      },
+    },
+    1,
+    ['title', 'url_slug', 'short_description', 'project_status']
+  );
   return (
     <CommonPostPreviewPage
       title="Projects"
       directory="projects/project"
-      posts={projects}
+      posts={data}
     />
   );
 }
+export const metadata: Metadata = {
+  title: 'Search Results',
+  description: "Search results in B. Tang's personal projects",
+};
