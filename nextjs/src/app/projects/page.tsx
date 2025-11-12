@@ -1,29 +1,25 @@
-'use client';
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { fetchProjects } from '../utils/fetchProjects';
-import { Post } from '../types/Post';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 
-export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Array<Post>>([]);
-  useEffect(() => {
-    const fetchProjectsData = async () => {
-      const { data } = await fetchProjects({}, 1, [
-        'title',
-        'url_slug',
-        'short_description',
-        'project_status',
-      ]);
-      setProjects(data);
-    };
-    fetchProjectsData();
-  }, []);
+export default async function ProjectsPage() {
+  const { data } = await fetchProjects({}, 1, [
+    'title',
+    'url_slug',
+    'short_description',
+    'project_status',
+  ]);
   return (
     <CommonPostPreviewPage
       title="Projects"
       directory="projects/project"
-      posts={projects}
+      posts={data}
     />
   );
+}
+export async function generateMetadata() {
+  return {
+    title: 'Projects',
+    description: "B. Tang's personal projects",
+  };
 }

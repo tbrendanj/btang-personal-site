@@ -39,13 +39,13 @@ export async function generateMetadata({
   };
 }) {
   const { url_slug } = await params;
-  const projectPost = await await fetchProjects({
+  const { data } = await fetchProjects({
     url_slug: {
       $eqi: url_slug,
     },
   });
   return {
-    title: projectPost.title,
-    description: projectPost.short_description,
+    title: data[0].title,
+    description: data[0].short_description,
   };
 }
