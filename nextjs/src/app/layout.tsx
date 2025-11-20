@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "B. Tang's Internet Corner",
-  description: "B. Tang's personal site",
+  title: process.env.siteName,
+  description: process.env.siteDescription,
 };
 
 export default function RootLayout({

@@ -12,7 +12,7 @@ export default function Header() {
    * these items changing often if at all, I've decided that it's better to just
    * hardcode them and not make the extra requests to Strapi for my use case.
    */
-  const title = "B. Tang's Internet Corner";
+  const title = process.env.siteName;
   const navItems: NavBarProps = {
     navItems: HeaderTabs,
   };

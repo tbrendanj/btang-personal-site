@@ -31,5 +31,5 @@ export default async function BlogSearchPage({
 
 export const metadata: Metadata = {
   title: 'Search Results',
-  description: "Search results in B. Tang's personal blog",
+  description: 'Blog search results - ' + process.env.siteName,
 };

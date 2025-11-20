@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
       // }
     ],
   },
+  env: {
+    siteName: "B. Tang's Internet Corner",
+    siteDescription: 'The personal website of B. Tang.',
+  },
 };
 
 export default nextConfig;

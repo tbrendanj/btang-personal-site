@@ -17,6 +17,6 @@ export default async function HomePage() {
 }
 
 export const metadata: Metadata = {
-  title: "B. Tang's Internet Corner",
-  description: "B. Tang's blog and personal projects",
+  title: process.env.siteName,
+  description: 'Home - ' + process.env.siteName,
 };

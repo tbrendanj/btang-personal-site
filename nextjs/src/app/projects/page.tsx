@@ -21,5 +21,5 @@ export default async function ProjectsPage() {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: "B. Tang's personal projects",
+  description: 'Projects - ' + process.env.siteName,
 };

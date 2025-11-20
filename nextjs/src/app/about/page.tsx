@@ -18,6 +18,6 @@ export default async function AboutPage() {
 export async function generateMetadata() {
   return {
     title: 'About',
-    description: "About B. Tang's Internet Corner",
+    description: 'About - ' + process.env.siteName,
   };
 }

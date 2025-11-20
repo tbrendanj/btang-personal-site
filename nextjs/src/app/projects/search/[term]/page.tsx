@@ -34,5 +34,5 @@ export default async function ProjectSearchPage({
 }
 export const metadata: Metadata = {
   title: 'Search Results',
-  description: "Search results in B. Tang's personal projects",
+  description: 'Project search results - ' + process.env.siteName,
 };

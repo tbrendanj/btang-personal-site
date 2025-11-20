@@ -16,5 +16,5 @@ export default async function BlogPage() {
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: "B. Tang's personal blog",
+  description: 'Blog - ' + process.env.siteName,
 };
