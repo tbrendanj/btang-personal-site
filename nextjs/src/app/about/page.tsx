@@ -9,7 +9,7 @@ export default async function AboutPage() {
     <CommonPage
       title={data.title}
       text={data.text}
-      mainImage={data.mainImage}
+      mainImage={data.main_image}
       images={[]}
     />
   );

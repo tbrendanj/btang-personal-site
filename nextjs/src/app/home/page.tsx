@@ -6,11 +6,13 @@ import { Metadata } from 'next';
 
 export default async function HomePage() {
   const { data } = await fetchHome();
+  console.log(data);
+  console.log('home log');
   return (
     <CommonPage
       title={data.title}
       text={data.text}
-      mainImage={data.mainImage}
+      mainImage={data.main_image}
       images={[]}
     />
   );
