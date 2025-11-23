@@ -74,6 +74,12 @@ The postgres credentials don't really matter right now since I have yet to do an
 
 Contact page with a contact form
 
+Paginate searches
+
+Automated deployment scripts
+
+Blue-green deployment
+
 Highlight the header tab for the part of website the viewer is on
 
 Advanced searches for blog and project posts (as opposed to the current title-only search)
