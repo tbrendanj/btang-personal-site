@@ -21,31 +21,40 @@ export default function Contact() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.formInputDiv}>
-        <label htmlFor="name">Full Name</label>
+        <label htmlFor="name" className={styles.formInputLabel}>
+          Full Name
+        </label>
         <input
           type="text"
           placeholder="Full Name"
+          className={styles.formInput}
           {...register('name', { required: true })}
         />
       </div>
       <div className={styles.formInputDiv}>
-        <label htmlFor="email">Email Address</label>
+        <label htmlFor="email" className={styles.formInputLabel}>
+          Email Address
+        </label>
         <input
           type="email"
           placeholder="example@domain.com"
+          className={styles.formInput}
           {...register('email', { required: true })}
         />
       </div>
       <div className={styles.formInputDiv}>
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message" className={styles.formInputLabel}>
+          Message
+        </label>
         <textarea
           rows={4}
           placeholder="Type your message"
+          className={styles.formInputTextArea}
           {...register('message', { required: true })}
         ></textarea>
       </div>
       <div>
-        <button>Submit</button>
+        <button className={styles.formInputButton}>Submit</button>
       </div>
     </form>
   );
