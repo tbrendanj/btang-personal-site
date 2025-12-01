@@ -16,7 +16,7 @@
 }
 
 .commonPageImage {
-  max-width: 500px;
+  max-width: min(500px, 90vw);
   max-height: 360px;
   object-fit: contain;
   margin: auto;

@@ -19,7 +19,7 @@ export default function Contact() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div className={styles.formInputDiv}>
         <label htmlFor="name" className={styles.formInputLabel}>
           Full Name
