@@ -1,11 +1,10 @@
 .commonPostPreview {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
   border-radius: 10px;
   border: 1px solid #000000;
   padding: 2%;
-  width: 80%;
   max-height: 400px;
 }
 
@@ -23,4 +22,8 @@
   max-width: 80%;
   max-height: 200px;
   object-fit: contain;
+}
+
+.commonPostPreviewLink {
+  width: 80%;
 }

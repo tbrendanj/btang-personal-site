@@ -1,7 +1,7 @@
 .commonPostPreviewPage {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .commonPostPreviewPage h2 {
@@ -11,5 +11,5 @@
 .commonPostPreviewSearch {
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 0.25rem;
 }

@@ -1,7 +1,7 @@
 .navBar {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.25rem;
   width: 100%;
   max-width: 95vw;
   margin-left: auto;

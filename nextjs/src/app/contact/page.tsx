@@ -1,5 +1,6 @@
-import { notFound } from 'next/navigation';
+import React from 'react';
+import Contact from '@/components/Contact';
 
 export default function ContactPage() {
-  notFound();
+  return <Contact />;
 }

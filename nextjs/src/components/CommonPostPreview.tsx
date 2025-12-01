@@ -24,7 +24,7 @@ export default function CommonPostPreview({
   status = undefined,
 }: CommonPostPreviewProps) {
   return (
-    <Link href={'/' + urlSlug}>
+    <Link href={'/' + urlSlug} className={styles.commonPostPreviewLink}>
       <div className={styles.commonPostPreview}>
         <div className={styles.commonPostPreviewHeading}>
           <h3>{title}</h3>

@@ -4,7 +4,7 @@
 }
 
 .navItemWrapper {
-  height: 64px;
+  height: 4rem;
   text-decoration: none;
   border-bottom: 5px solid #cc00cc;
   transition: all 0.25s ease-out allow-discrete;
@@ -20,7 +20,7 @@
 
 @media (min-width: 768px) {
   .navItemWrapper {
-    height: 32px;
+    height: 2rem;
     justify-content: center;
   }
 

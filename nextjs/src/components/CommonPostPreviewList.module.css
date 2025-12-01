@@ -1,6 +1,6 @@
 .commonPostPreviewList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
   margin-left: 2%;
 }
