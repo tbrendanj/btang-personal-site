@@ -5,7 +5,9 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@types/nodemailer": "^7.0.11",
     "concurrently": "^9.2.1",
+    "nodemailer": "^8.0.4",
     "wait-on": "^9.0.1"
   },
   "devDependencies": {
