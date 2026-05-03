@@ -3,8 +3,15 @@ import { fetchProjects } from '@/app/utils/fetchProjects';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { Metadata } from 'next';
 
-export default async function ProjectsPage() {
-  const { data } = await fetchProjects({}, 1, [
+export default async function ProjectsPage({
+  params,
+}: {
+  params: {
+    page_number: number;
+  };
+}) {
+  const { page_number } = await params;
+  const { data } = await fetchProjects({}, page_number, [
     'title',
     'url_slug',
     'short_description',
