@@ -3,7 +3,7 @@ import { fetchProjects } from '@/app/utils/fetchProjects';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { Metadata } from 'next';
 
-export default async function ProjectsPage({
+export default async function ProjectsPaginatedPage({
   params,
 }: {
   params: {

@@ -1,13 +1,13 @@
 import React from 'react';
-import { fetchProjects } from '@/app/utils/fetchProjects';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
+import { fetchBlogPosts } from '@/app/utils/fetchBlogPosts';
 import { Metadata } from 'next';
 
 /**
  * As of now for the project MVP, searches only search by title.
  * Advanced search coming eventually. Maybe.
  */
-export default async function ProjectSearchPaginatedPage({
+export default async function BlogSearchPage({
   params,
 }: {
   params: {
@@ -16,24 +16,21 @@ export default async function ProjectSearchPaginatedPage({
   };
 }) {
   const { term, page_number } = await params;
-  const { data } = await fetchProjects(
+  const { data } = await fetchBlogPosts(
     {
       title: {
         $containsi: term,
       },
     },
     page_number,
-    ['title', 'url_slug', 'short_description', 'project_status']
+    ['title', 'url_slug', 'short_description']
   );
   return (
-    <CommonPostPreviewPage
-      title="Projects"
-      directory="projects/project"
-      posts={data}
-    />
+    <CommonPostPreviewPage title="Blog" directory="blog/post" posts={data} />
   );
 }
+
 export const metadata: Metadata = {
   title: 'Search Results',
-  description: 'Project search results - ' + process.env.siteName,
+  description: 'Blog search results - ' + process.env.siteName,
 };
