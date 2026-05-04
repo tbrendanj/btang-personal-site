@@ -2,6 +2,7 @@ import React from 'react';
 import { fetchProjects } from '@/app/utils/fetchProjects';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { Metadata } from 'next';
+import { setUpSearchTermArray } from '@/app/utils/setUpSearchTermArray';
 
 /**
  * As of now for the project MVP, searches only search by title.
@@ -16,15 +17,16 @@ export default async function ProjectSearchPaginatedPage({
   };
 }) {
   const { term, page_number } = await params;
-  const { data } = await fetchProjects(
-    {
-      title: {
-        $containsi: term,
-      },
-    },
-    page_number,
-    ['title', 'url_slug', 'short_description', 'project_status']
-  );
+  const searchTermsArray = setUpSearchTermArray(term);
+  const searchParams = {
+    $and: searchTermsArray,
+  };
+  const { data } = await fetchProjects(searchParams, page_number, [
+    'title',
+    'url_slug',
+    'short_description',
+    'project_status',
+  ]);
   return (
     <CommonPostPreviewPage
       title="Projects"

@@ -21,7 +21,7 @@ export default function CommonPostPreviewPage({
   const router = useRouter();
   const search = () => {
     router.push(
-      `/${directory.split('/')[0]}/search/${inputRef.current ? inputRef.current.value : ''}`
+      `/${directory.split('/')[0]}/search/${inputRef.current ? encodeURIComponent(decodeURIComponent(inputRef.current.value)) : ''}`
     );
   };
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { fetchBlogPosts } from '@/app/utils/fetchBlogPosts';
 import { Metadata } from 'next';
+import { setUpSearchTermArray } from '@/app/utils/setUpSearchTermArray';
 
 /**
  * As of now for the project MVP, searches only search by title.
@@ -16,15 +17,15 @@ export default async function BlogSearchPage({
   };
 }) {
   const { term, page_number } = await params;
-  const { data } = await fetchBlogPosts(
-    {
-      title: {
-        $containsi: term,
-      },
-    },
-    page_number,
-    ['title', 'url_slug', 'short_description']
-  );
+  const searchTermsArray = setUpSearchTermArray(term);
+  const searchParams = {
+    $and: searchTermsArray,
+  };
+  const { data } = await fetchBlogPosts(searchParams, page_number, [
+    'title',
+    'url_slug',
+    'short_description',
+  ]);
   return (
     <CommonPostPreviewPage title="Blog" directory="blog/post" posts={data} />
   );
