@@ -38,7 +38,7 @@ export default function CommonPostPreviewPage({
       <CommonPostPreviewList posts={posts} directory={directory} />
       <PageNumberNav
         pageNumber={pageNumber}
-        pageUrl={`${pathname.replace(/[1234567890]+$/, '')}`}
+        pageUrl={`${pathname.replace(/(?<!blog\/search)\/[1234567890]+$/, '/')}`}
         leftEnabled={pageNumber > 1}
         rightEnabled={posts.length > 9}
       />

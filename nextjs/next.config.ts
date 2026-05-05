@@ -1,8 +1,12 @@
 import type { NextConfig } from 'next';
+const isDev = (
+  process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
+).startsWith('http://localhost');
 
 const nextConfig: NextConfig = {
   output: 'standalone',
   images: {
+    dangerouslyAllowLocalIP: isDev,
     remotePatterns: [
       {
         protocol: 'http',
