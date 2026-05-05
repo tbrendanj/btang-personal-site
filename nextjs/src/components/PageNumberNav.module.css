@@ -1,0 +1,41 @@
+.pageNumberNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid #000000;
+}
+
+.pageNumberNavSubDiv {
+  display: grid;
+  width: 5rem;
+  height: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.pageNumberNavSubDiv * {
+  margin: auto;
+}
+
+.pageNumberNavSubDiv a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pageNumberNavSubDiv.buttonEnabled:hover {
+  background-color: #f2f2f2;
+}
+
+.pageNumberNavSubDivLeft {
+  border-radius: 1rem 0rem 0rem 1rem;
+}
+
+.pageNumberNavSubDivRight {
+  border-radius: 0rem 1rem 1rem 0rem;
+}
