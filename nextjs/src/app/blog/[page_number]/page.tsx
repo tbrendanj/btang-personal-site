@@ -17,7 +17,12 @@ export default async function BlogPaginatedPage({
     'short_description',
   ]);
   return (
-    <CommonPostPreviewPage title="Blog" directory="blog/post" posts={data} />
+    <CommonPostPreviewPage
+      title="Blog"
+      pageNumber={page_number}
+      directory="blog/post"
+      posts={data}
+    />
   );
 }
 

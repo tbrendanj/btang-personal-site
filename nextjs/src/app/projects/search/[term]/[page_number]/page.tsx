@@ -30,6 +30,7 @@ export default async function ProjectSearchPaginatedPage({
   return (
     <CommonPostPreviewPage
       title="Projects"
+      pageNumber={page_number}
       directory="projects/project"
       posts={data}
     />

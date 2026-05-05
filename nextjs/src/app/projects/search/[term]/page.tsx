@@ -16,11 +16,12 @@ export default async function ProjectSearchPage({
   };
 }) {
   const { term } = await params;
+  const pageNumber = 1;
   const searchTermsArray = setUpSearchTermArray(term);
   const searchParams = {
     $and: searchTermsArray,
   };
-  const { data } = await fetchProjects(searchParams, 1, [
+  const { data } = await fetchProjects(searchParams, pageNumber, [
     'title',
     'url_slug',
     'short_description',
@@ -29,6 +30,7 @@ export default async function ProjectSearchPage({
   return (
     <CommonPostPreviewPage
       title="Projects"
+      pageNumber={pageNumber}
       directory="projects/project"
       posts={data}
     />

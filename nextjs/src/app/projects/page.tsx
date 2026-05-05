@@ -4,7 +4,8 @@ import CommonPostPreviewPage from '@/components/CommonPostPreviewPage';
 import { Metadata } from 'next';
 
 export default async function ProjectsPage() {
-  const { data } = await fetchProjects({}, 1, [
+  const pageNumber = 1;
+  const { data } = await fetchProjects({}, pageNumber, [
     'title',
     'url_slug',
     'short_description',
@@ -13,6 +14,7 @@ export default async function ProjectsPage() {
   return (
     <CommonPostPreviewPage
       title="Projects"
+      pageNumber={pageNumber}
       directory="projects/project"
       posts={data}
     />

@@ -20,6 +20,7 @@ export default async function ProjectsPaginatedPage({
   return (
     <CommonPostPreviewPage
       title="Projects"
+      pageNumber={page_number}
       directory="projects/project"
       posts={data}
     />

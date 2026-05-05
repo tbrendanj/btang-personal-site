@@ -9,19 +9,20 @@ export interface PageNumberNavProps {
   rightEnabled: boolean;
 }
 
-export default function Status({
+export default function PageNumberNav({
   pageNumber,
   pageUrl,
   leftEnabled,
   rightEnabled,
 }: PageNumberNavProps) {
+  const hrefUrl = pageUrl.slice(-1) === '/' ? pageUrl : pageUrl.concat('/');
   return (
     <div className={`${styles.pageNumberNav}`}>
       <div
         className={`${styles.pageNumberNavSubDiv} ${styles.pageNumberNavSubDivLeft} ${leftEnabled && pageNumber > 1 ? styles.buttonEnabled : ''}`}
       >
         {leftEnabled && pageNumber > 1 && (
-          <a href={`${pageUrl}/${pageNumber - 1}`}>&lt;</a>
+          <a href={`${hrefUrl}${Number(pageNumber) - 1}`}>&lt;</a>
         )}
       </div>
       <div className={`${styles.pageNumberNavSubDiv}`}>
@@ -30,7 +31,9 @@ export default function Status({
       <div
         className={`${styles.pageNumberNavSubDiv} ${styles.pageNumberNavSubDivRight} ${rightEnabled ? styles.buttonEnabled : ''}`}
       >
-        {rightEnabled && <a href={`${pageUrl}/${pageNumber + 1}`}>&gt;</a>}
+        {rightEnabled && (
+          <a href={`${hrefUrl}${Number(pageNumber) + 1}`}>&gt;</a>
+        )}
       </div>
     </div>
   );

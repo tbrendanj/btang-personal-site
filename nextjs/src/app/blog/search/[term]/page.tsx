@@ -16,17 +16,23 @@ export default async function BlogSearchPage({
   };
 }) {
   const { term } = await params;
+  const pageNumber = 1;
   const searchTermsArray = setUpSearchTermArray(term);
   const searchParams = {
     $and: searchTermsArray,
   };
-  const { data } = await fetchBlogPosts(searchParams, 1, [
+  const { data } = await fetchBlogPosts(searchParams, pageNumber, [
     'title',
     'url_slug',
     'short_description',
   ]);
   return (
-    <CommonPostPreviewPage title="Blog" directory="blog/post" posts={data} />
+    <CommonPostPreviewPage
+      title="Blog"
+      pageNumber={pageNumber}
+      directory="blog/post"
+      posts={data}
+    />
   );
 }
 
