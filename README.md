@@ -74,8 +74,6 @@ You will need a Gmail email and App Password to run the email contact form on th
 
 # Future Features
 
-Paginate searches
-
 Automated deployment scripts
 
 Blue-green deployment
