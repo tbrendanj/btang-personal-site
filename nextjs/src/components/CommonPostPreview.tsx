@@ -5,7 +5,7 @@ import { StatusValues } from '@/app/types/StatusValues';
 import Status from './Status';
 import { StrapiImage } from '@/app/types/StrapiImage';
 import Image from 'next/image';
-// import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
+import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
 import Link from 'next/link';
 
 export interface CommonPostPreviewProps {
@@ -37,7 +37,7 @@ export default function CommonPostPreview({
             alt={mainImage.alternativeText ?? 'image'}
             width={mainImage.width}
             height={mainImage.height}
-            src={`${mainImage.url}`}
+            src={`${getStrapiImageUrl(mainImage.url)}`}
           />
         )}
       </div>

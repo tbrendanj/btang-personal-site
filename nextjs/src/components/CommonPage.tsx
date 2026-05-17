@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { BlocksContent, BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { StrapiImage } from '@/app/types/StrapiImage';
-// import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
+import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
 
 import styles from './CommonPage.module.css';
 import { StatusValues } from '@/app/types/StatusValues';
@@ -39,7 +39,7 @@ export default function CommonPage({
           alt={mainImage.alternativeText ?? 'image'}
           width={mainImage.width}
           height={mainImage.height}
-          src={`${mainImage.url}`}
+          src={`${getStrapiImageUrl(mainImage.url)}`}
         />
       )}
       <div>
@@ -63,7 +63,7 @@ export default function CommonPage({
                 alt={image.alternativeText ?? 'image'}
                 width={image.width}
                 height={image.height}
-                src={`${image.url}`}
+                src={`${getStrapiImageUrl(image.url)}`}
               />
             );
           })}
