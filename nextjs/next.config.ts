@@ -27,9 +27,6 @@ const nextConfig: NextConfig = {
     siteName: "B. Tang's Internet Corner",
     siteDescription: 'The personal website of B. Tang.',
   },
-  turbopack: {
-    root: __dirname + '/..',
-  },
 };
 
 export default nextConfig;
