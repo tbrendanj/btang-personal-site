@@ -51,7 +51,7 @@ export default function CommonPage({
         </div>
       )}
       <div className={styles.commonPageImages}>
-        {images.length > 0 &&
+        {images?.length > 0 &&
           images.map((image, index) => {
             if (!(image && image.url)) {
               return '';
