@@ -15,7 +15,6 @@ const nextConfig: NextConfig = {
           ? 'localhost'
           : 'efficient-triumph-10407e414d.media.strapiapp.com',
         port: '1337',
-        pathname: '/uploads/**',
       },
       // example of external host:
       // {
