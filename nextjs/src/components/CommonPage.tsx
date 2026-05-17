@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import { BlocksContent, BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { StrapiImage } from '@/app/types/StrapiImage';
 import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
@@ -34,7 +34,7 @@ export default function CommonPage({
         {status && <Status status={status} />}
       </div>
       {mainImage && mainImage.url && (
-        <Image
+        <img
           className={styles.commonPageImage}
           alt={mainImage.alternativeText ?? 'image'}
           width={mainImage.width}
@@ -57,7 +57,7 @@ export default function CommonPage({
               return '';
             }
             return (
-              <Image
+              <img
                 key={'images_' + index}
                 className={styles.commonPageImage}
                 alt={image.alternativeText ?? 'image'}

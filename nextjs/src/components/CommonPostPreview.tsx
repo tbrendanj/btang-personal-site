@@ -4,7 +4,7 @@ import styles from './CommonPostPreview.module.css';
 import { StatusValues } from '@/app/types/StatusValues';
 import Status from './Status';
 import { StrapiImage } from '@/app/types/StrapiImage';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { getStrapiImageUrl } from '@/app/utils/getStrapiImageUrl';
 import Link from 'next/link';
 
@@ -32,7 +32,7 @@ export default function CommonPostPreview({
         </div>
         <div className={styles.commonPostPreviewBody}>{shortDescription}</div>
         {mainImage && (
-          <Image
+          <img
             className={styles.commonPostPreviewImage}
             alt={mainImage.alternativeText ?? 'image'}
             width={mainImage.width}
