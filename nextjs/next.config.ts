@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
         protocol: isDev ? 'http' : 'https',
         hostname: isDev
           ? 'localhost'
-          : 'efficient-triumph-10407e414d.strapiapp.com',
+          : 'efficient-triumph-10407e414d.media.strapiapp.com',
         port: '1337',
         pathname: '/uploads/**',
       },

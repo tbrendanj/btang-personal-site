@@ -2,6 +2,10 @@ export function getStrapiURL(path = '') {
   return `${process.env.STRAPI_URL || 'http://localhost:1337'}${path}`;
 }
 
+export function getStrapiMediaURL(path = '') {
+  return `${process.env.STRAPI_MEDIA_URL || 'http://localhost:1337'}${path}`;
+}
+
 export function getStrapiMedia(url: string | null) {
   if (url == null) {
     return null;
@@ -13,7 +17,7 @@ export function getStrapiMedia(url: string | null) {
   }
 
   // Otherwise prepend the URL path with the Strapi URL
-  return `${getStrapiURL()}${url}`;
+  return `${getStrapiMediaURL()}${url}`;
 }
 
 export function formatDate(dateString: string) {
