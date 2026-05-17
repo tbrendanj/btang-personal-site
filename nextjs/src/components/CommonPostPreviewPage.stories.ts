@@ -38,6 +38,8 @@ export const Default: Story = {
         short_description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         main_image: null,
+        images: [],
+        text: [],
       },
       {
         title: 'Lorem Ipsum2',
@@ -46,6 +48,8 @@ export const Default: Story = {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         main_image: null,
         project_status: StatusValues.active,
+        images: [],
+        text: [],
       },
       {
         title: 'Lorem Ipsum3',
@@ -54,7 +58,10 @@ export const Default: Story = {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         main_image: null,
         project_status: StatusValues.inactive,
+        images: [],
+        text: [],
       },
     ],
+    pageNumber: 1,
   },
 };

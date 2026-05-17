@@ -2,7 +2,7 @@ import { fetchAPI } from './fetchApi';
 
 export async function fetchHome() {
   try {
-    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+    const token = process.env.STRAPI_API_TOKEN;
     const path = '/home-page';
     const options = { headers: { Authorization: `Bearer ${token}` } };
     const urlParamsObject = {

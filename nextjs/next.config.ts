@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
-const isDev = (
-  process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
-).startsWith('http://localhost');
+const isDev = (process.env.STRAPI_URL || 'http://localhost:1337').startsWith(
+  'http://localhost'
+);
 
 const nextConfig: NextConfig = {
   output: 'standalone',
@@ -9,8 +9,10 @@ const nextConfig: NextConfig = {
     dangerouslyAllowLocalIP: isDev,
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
+        protocol: isDev ? 'http' : 'https',
+        hostname: isDev
+          ? 'localhost'
+          : 'efficient-triumph-10407e414d.strapiapp.com',
         port: '1337',
         pathname: '/uploads/**',
       },
