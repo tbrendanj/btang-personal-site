@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   images: {
     dangerouslyAllowLocalIP: isDev,
-    imageSizes: [3072, 3840],
     remotePatterns: [
       {
         protocol: isDev ? 'http' : 'https',
