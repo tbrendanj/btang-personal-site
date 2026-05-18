@@ -23,7 +23,7 @@ export default async function ProjectPage({
     <CommonPage
       title={data[0].title}
       text={data[0].text}
-      mainImage={data[0].mainImage}
+      mainImage={data[0].main_image}
       images={data[0].images}
       status={data[0].status}
       link={data[0].link}
