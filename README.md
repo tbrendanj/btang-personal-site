@@ -74,6 +74,8 @@ You will need a Gmail email and App Password to run the email contact form on th
 
 # Future Features
 
+Re-implement optimized images once I get a chance to figure out why the production output on Vercel didn't work (Kept getting [400](https://vercel.com/docs/errors/invalid_image_optimize_request))
+
 Automated deployment scripts
 
 Blue-green deployment
