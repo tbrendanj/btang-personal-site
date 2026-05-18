@@ -16,8 +16,9 @@ export default async function BlogPostPage({
       $eqi: url_slug,
     },
   });
-
-  if (!data?.length) {
+  console.log(url_slug);
+  console.log(data);
+  if (!data.length) {
     redirect('/blog');
   }
   return (

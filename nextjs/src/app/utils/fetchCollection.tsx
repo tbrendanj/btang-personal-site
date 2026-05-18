@@ -39,7 +39,7 @@ export async function fetchCollection(
       },
     };
 
-    if (fields?.length > 0) {
+    if (fields.length > 0) {
       urlParamsObject.fields = fields;
     }
 
