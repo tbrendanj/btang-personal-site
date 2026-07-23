@@ -10,7 +10,6 @@
     "nodemailer": "^8.0.4",
     "outdated": "^0.1.1",
     "type-check": "^0.4.0",
-    "typescript": "^5.9.3",
     "wait-on": "^9.0.1"
   },
   "devDependencies": {
