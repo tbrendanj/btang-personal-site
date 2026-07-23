@@ -23,12 +23,7 @@
     "images": {
       "type": "media",
       "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "link": {
       "type": "string"
@@ -39,22 +34,14 @@
     "main_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "release_date": {
       "type": "datetime"
     },
     "project_status": {
       "type": "enumeration",
-      "enum": [
-        "active",
-        "inactive"
-      ]
+      "enum": ["active", "inactive"]
     }
   }
 }
