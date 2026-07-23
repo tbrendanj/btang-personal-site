@@ -8,6 +8,7 @@ WORKDIR /opt/
 # Copy package files first for better layer caching
 COPY package.json package-lock.json ./
 RUN npm install -g node-gyp
+RUN npm install -g husky
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm ci --only=production
 ENV PATH=/opt/node_modules/.bin:$PATH
 
