@@ -15,7 +15,7 @@ ENV PATH=/opt/node_modules/.bin:$PATH
 # Copy application code after dependencies are installed
 WORKDIR /opt/app
 COPY . .
-RUN cd nextjs && npm run build
+RUN cd nextjs && npm i && npm run build
 
 # Creating final production image
 FROM node:20.17.0-alpine3.20
