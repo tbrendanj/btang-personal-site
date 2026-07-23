@@ -113,6 +113,9 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
 
+      - name: 📦 Install dependencies
+        run: cd nextjs && npm ci
+
       - name: 🛠️ Set up build
         run: cd nextjs && npm run build
 
