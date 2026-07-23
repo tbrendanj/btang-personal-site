@@ -13,9 +13,9 @@ RUN npm config set fetch-retry-maxtimeout 600000 -g && npm ci --only=production
 ENV PATH=/opt/node_modules/.bin:$PATH
 
 # Copy application code after dependencies are installed
-WORKDIR /opt/nextjs
+WORKDIR /opt/app
 COPY . .
-RUN npm run build
+RUN cd nextjs && npm run build
 
 # Creating final production image
 FROM node:20.17.0-alpine3.20
@@ -25,11 +25,11 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
 COPY --from=build /opt/node_modules ./node_modules
-WORKDIR /opt/nextjs
-COPY --from=build /opt/nextjs ./
+WORKDIR /opt/app
+COPY --from=build /opt/app ./
 ENV PATH=/opt/node_modules/.bin:$PATH
 
-RUN chown -R node:node /opt/nextjs
+RUN chown -R node:node /opt/app
 USER node
 EXPOSE 1337
 CMD ["npm", "run", "start"]
