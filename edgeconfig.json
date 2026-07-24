@@ -1,0 +1,7 @@
+{
+  "blue-green-configuration": {
+    "deploymentDomainBlue": "btang-personal-site.vercel.app",
+    "deploymentDomainGreen": "btang-personal-site-ci8i.vercel.app",
+    "trafficGreenPercent": 50
+  }
+}
